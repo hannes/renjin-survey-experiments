@@ -1,6 +1,9 @@
-svydata <- readRDS("alabama.rds")
+#svydata <- readRDS("alabama.rds")
+#wts <- svydata[,200:279]
 
-wts <- svydata[,200:279]
+svydata <- readRDS("california.rds")
+wts <- svydata[,195:274]
+
 x <- svydata$agep
 dim(x) <- c(length(x), 1)
 pw <- 1L
