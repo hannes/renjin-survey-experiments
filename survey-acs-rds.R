@@ -4,6 +4,7 @@ system.time(
 	svydata <- readRDS(paste0(commandArgs(TRUE),".rds"))
 	#svydata <- readRDS("california.rds")
 )	#svydata <- readRDS("acs3yr.rds")
+  names(svydata) <- tolower(names(svydata))
 
 
 system.time(
@@ -125,13 +126,14 @@ svymean2<-function(x,design, na.rm=FALSE, rho=NULL,
 
 
 system.time({
-  print(svymean2(~agep, svydsgn, se=TRUE))
+ m <- svymean2(~agep, svydsgn, se=TRUE)
   
   })
+
 system.time({
-  print(svymean2(~relp, svydsgn, se=TRUE))
-  
+  print(m)
   })
+
 
 # dd <- list(svymean(~agep, svydsgn, se=TRUE),
 # 	svytotal(~I(relp %in% 0:15), svydsgn),
