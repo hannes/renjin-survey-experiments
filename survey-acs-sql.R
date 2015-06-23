@@ -2,7 +2,6 @@ library(MonetDB.R)
 library(survey)
 library(sqlsurvey)
 
-options(dbi.debug=T)
 # we need to clean up for now because there are tables left over atm
 db <- dbConnect(MonetDB.R(), "acs")
 
