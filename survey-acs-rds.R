@@ -17,6 +17,9 @@ system.time(
       data = svydata) 
 )
 
+
+options(na.action="na.pass")
+
 # from survey package, R/surveyrep.R
 # slightly patched to use numeric NAs in matrices and avoid over-decorating result
 svymean <- function(x,design, na.rm=FALSE, rho=NULL,
